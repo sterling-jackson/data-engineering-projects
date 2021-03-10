@@ -1,1 +1,3 @@
-# Build Script
+#!/bin/bash
+
+# Implement your build script.
