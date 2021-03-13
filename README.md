@@ -38,3 +38,6 @@ A collection of projects to learn data engineering and demonstrate proficiency w
 - Records should be validated against the expected columns/keys and written separately to accepted/rejected files.
 - Your accepted file should be bulk loaded using COPY to the target table. Your COPY command will need to be dynamically generated.
 - See `project-3` to get started.
+
+### Project 4: Simple Kafka Consumer & Producer
+...
