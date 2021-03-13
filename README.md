@@ -4,16 +4,17 @@ A collection of projects to learn data engineering and demonstrate proficiency w
 ### Recommendations
 
 - [Google's Style Guide for Python](https://google.github.io/styleguide/pyguide.html) is an excellent resource for style recommendations.
+- Choose and use a consistent style when writing SQL.
+- You should generally try to include functions/methods, logging, exception handling, type anotations, helpful comments, and intuitive naming conventions. 
 
 ### Project 1: Docker + Python CLI
 - Build a Docker image that runs a Python application which accepts --filepath and --delimiter arguments.
 - Use `argparse`, `logging`, `csv` and a multi-processing library of your choice such as `concurrent.futures`.
-- Include functions/methods, logging, exception handling, type anotations, helpful comments, and intuitive naming conventions. 
-- Avoid using Pandas for this exercise.
+- Avoid using Pandas for this exercise to better showcase your profiency with the language.
 - See `project-1` to get started.
 
 ### Project 2: Postgres + COPY
-- Download the [Seattle Library Collection Inventory CSV](https://www.kaggle.com/city-of-seattle/seattle-library-collection-inventory) from Kaggle. Bonus points if you automate the download.
+- Download the [Seattle Library Collection Inventory CSV](https://www.kaggle.com/city-of-seattle/seattle-library-collection-inventory) from Kaggle. Consider automating the download process for bonus points.
 - Write SQL to create four tables in Postgres: `inventory_staging`, `inventory_archive`, `inventory_production`, and `inventory_derived`. Each table should include a checksum, unique row number, and date created column. Consider also creating an `inventory` view from `inventory_production` for ease of use.
 - Implement a method for initializing your data warehouse by running your DDL. This should run the DDL that you prepared previously, creating or recreating all of your tables.
 - Implement a method for bulk loading your data files to the `inventory_staging` table. It should remove all previous records from the table before loading the current batch. Use the COPY command to do this.
@@ -27,3 +28,10 @@ A collection of projects to learn data engineering and demonstrate proficiency w
   - Bulk load outputs to inventory table.
   - Truncate and recreate derived table.
 - See `project-2` to get started.
+
+### Project 3: CSV/JSON File Loader
+- Create a metadata-driven file loader using Python and Docker than can validate and load any CSV or JSON file. Consider adding support for SFTP and AWS S3 for bonus points.
+- The application should accept `--config` and `--source` arguments. The config file should include properties for file pattern, expected columns/keys, and the destination table. Consider adding support for both append and replace behaviors during loading.
+- Use `argparse`, `logging`, `csv` and a multi-processing library of your choice such as `concurrent.futures`. Consider experimenting with both thread and process pooling to see which yields better performance.
+- Avoid using Pandas for the exercise to better showcase your proficiency with the language.
+- See `project-3` to get started.
