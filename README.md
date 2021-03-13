@@ -14,7 +14,7 @@ A collection of projects to learn data engineering and demonstrate proficiency w
 
 ### Project 2: Postgres + COPY
 - Download the [Seattle Library Collection Inventory CSV](https://www.kaggle.com/city-of-seattle/seattle-library-collection-inventory) from Kaggle. Bonus points if you automate the download.
-- Write SQL to create four tables in Postgres: `inventory_staging`, `inventory_archive`, `inventory_production`, and `inventory_derived`. Both tables should include a checksum, unique row number, and date created column. Consider also creating an `inventory` view from `inventory_production` for ease of use.
+- Write SQL to create four tables in Postgres: `inventory_staging`, `inventory_archive`, `inventory_production`, and `inventory_derived`. Each table should include a checksum, unique row number, and date created column. Consider also creating an `inventory` view from `inventory_production` for ease of use.
 - Implement a method for initializing your data warehouse by running your DDL. This should run the DDL that you prepared previously, creating or recreating all of your tables.
 - Implement a method for bulk loading your data files to the `inventory_staging` table. It should remove all previous records from the table before loading the current batch. Use the COPY command to do this.
 - Next, create a SQL script that inserts any new records from the batch into `inventory_archive`. You can use checksum to determine this. Finally, create a SQL script that inserts from inventory_staging to inventory_production, replacing replacing any existing records on primary key.
