@@ -11,10 +11,10 @@
 - Append the filename to the end of the row as `source_file`.
 - Use multi-processing to run multiple processes or threads.
 
-##### Step 1:
+##### Instructions:
 - Create your Python application.
 - Run your Python aplication against a reasonably small file (< 1 GB).
 - Once your application works as expected, create your Dockerfile.
 - Create a `build.sh` script that runs your `docker build` command.
 - Build your Docker image by running `build.sh`.
-- Run your Docker image against a reasonably small file (< 1 GB). Your `docker run` command should look something like `docker run image-name:tag python app.py --filepath="" --delimiter=""`.
+- Run your Docker image against a reasonably small file (< 1 GB). Your `docker run` command should look something like `docker run image-name:tag python app.py --filepath="" --delimiter=""`. Consider experimenting using larger files to see how your application behaves.
