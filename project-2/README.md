@@ -13,17 +13,17 @@
 ##### Instructions:
 - Download the [Seattle Library Collection Inventory CSV](https://www.kaggle.com/city-of-seattle/seattle-library-collection-inventory) from Kaggle.
   - You can use `head <filename>` to inspect the file to determine which columns to create for the next step.
-- Write SQL to create four tables in Postgres: `inventory_staging`, `inventory_archive`, `inventory_production`, and `inventory_derived`. Each table should include a checksum, unique row number, and date created column. Consider also creating an `inventory` view from `inventory_production` for ease of use. You can use `bibnum` as the primary key.
-- Implement a method for initializing your data warehouse by running your DDL. This should run the DDL that you prepared previously, creating or recreating all of your tables.
+- Write SQL to create four tables in Postgres: `inventory_staging`, `inventory_archive`, `inventory_production`, and `inventory_derived`. Each table should include a checksum, unique row number, and date created column. You can use `bibnum` as the primary key. Consider creating an `inventory` view from `inventory_production` for ease of use.
+- Implement a method for initializing your data warehouse by running your DDL. Your DDL should create the tables *only if they don't exist*!
 - Implement a method for bulk loading your data files to the `inventory_staging` table. It should remove all previous records from the table before loading the current batch. Use the COPY command to do this.
-- Next, create a SQL script that inserts any new records from the batch into `inventory_archive`. You can use checksum to determine this. Finally, create a SQL script that inserts from `inventory_staging` to `inventory_production`, replacing any matches on the primary key.
-- Finally, create a SQL script to aggregate data from the inventory table and write it to inventory_derived. This should be a full replacement of what's in inventory_derived. This table should contain individual subject values parsed from the subjects column and grouped by publisher so your final derived table should contain publisher, subject, count, row number and date created.
+- Create a SQL script that inserts any new records from the batch into `inventory_archive`. You can use checksum to determine this. Finally, create a SQL script that inserts from `inventory_staging` to `inventory_production`, replacing any matches on the primary key.
+- Create a SQL script to aggregate data from `inventory_production` and write it to `inventory_derived`. This should replace anything that exists in `inventory_derived`. This table should contain individual subject values parsed from the subjects column and grouped by publisher so your final derived table should contain `publisher`, `subject`, `count`, `row_number`, and `date_created`.
 - Create or pull a Postgres Docker image and launch it so that your application can connect to it.
-- Create a Shell script (run.sh) that executes the following steps:
-  - Fetch data from Kaggle.
-  - Extract and process data to produce outputs.
+- Create a Shell script (run.sh) within your project directory that executes the following steps:
+  - Fetch source data from Kaggle.
   - Create data warehouse objects.
-  - Bulk load outputs to inventory table.
+  - Bulk load source data to inventory staging table.
+  - Load your archive and production tables from your staging table.
   - Truncate and recreate derived table.
 - Run your Docker image to see what happens. You will need to mount the directory containing your source file to the Docker image using `-v`. Your `docker run` command should look something like `docker run -v <project-directory>:<container-directory> image-name:tag bash run.sh`.
 - After it works correctly, add your solution to Github and try the next project (or try this one again using a different language!)
