@@ -30,7 +30,7 @@ A collection of projects to learn data engineering and demonstrate proficiency w
   - Truncate and recreate derived table.
 - See `project-2` to get started.
 
-### Project 3: CSV/JSON File Loader
+### Project 3: Simple CSV/JSON File Loader
 - Create a metadata-driven file loader using Python and Docker than can validate and load any CSV or JSON file. Consider adding support for SFTP and AWS S3 for bonus points.
 - The application should accept `--config` and `--source` arguments. The config file can be JSON or YAML and should include properties for file pattern, delimiter, expected columns/keys, and the destination table. Consider adding support for both append and replace behaviors during loading.
 - Use `argparse`, `logging`, `csv`, `json`/`yaml` and a multi-processing library of your choice such as `concurrent.futures`. Consider experimenting with both thread and process pooling to see which yields better performance. Also consider experimenting with files that are larger than your available memory.
