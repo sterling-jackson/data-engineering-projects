@@ -10,6 +10,7 @@
 - Append a MD5 checksum built from all of the input columns to the end of the row as `checksum`.
 - Append the filename to the end of the row as `source_file`.
 - Use multi-processing to run multiple processes or threads.
+- Write the results out to a new delimited file.
 
 ##### Instructions:
 - Create your Python application.
