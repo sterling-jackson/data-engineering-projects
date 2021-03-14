@@ -1,5 +1,7 @@
 ### Project 2: Postgres + Bulk Loading
 - Build a Docker image that runs a Python application which downloads, loads, and transforms a large CSV using Postgres.
+- Create staging, archive, and production tables within Postgres to load data into.
+- Merge staged data using a primary key and create derived dataset by aggregating loaded data using SQL queries.
 - Avoid using Pandas for this exercise to better showcase your profiency with the language.
 
 ##### Your application should:
