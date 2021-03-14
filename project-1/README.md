@@ -19,3 +19,4 @@
 - Create a `build.sh` script that runs your `docker build` command.
 - Build your Docker image by running `build.sh`.
 - Run your Docker image against a reasonably small file (< 1 GB). Your `docker run` command should look something like `docker run image-name:tag python app.py --filepath="" --delimiter=""`. Consider experimenting using larger files to see how your application behaves.
+- After it works correctly, add your solution to your Github profile and try the next project (or try this one again using a different language!)
