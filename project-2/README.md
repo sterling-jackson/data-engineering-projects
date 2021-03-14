@@ -31,5 +31,5 @@
 ##### Troubleshooting
 - If your system has memory problems, you could break the CSV into smaller chunks and then process the chunks one at a time.
   - You can use `split -l <chunk-size> <source-file> <output-file>` command to do this.
-- Launch an interactive connection to your Docker image by including `-it` in your `docker run` command. It should looking something like `docker run -it -v <project-directory>:<container-directory> image-name:tag bash`.
+- Launch an interactive connection to your Docker image by including `-it` in your `docker run` command. This command should look something like `docker run -it -v <project-directory>:<container-directory> image-name:tag bash`.
   - You can use this if your system doesn't support commands like `head` and `split`.
