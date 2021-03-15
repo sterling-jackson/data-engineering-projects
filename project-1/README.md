@@ -14,9 +14,9 @@
 
 ##### Instructions:
 - Create your Python application.
-- Run your Python aplication against a reasonably small file (< 1 GB).
+- Run your Python aplication against a reasonably small file (~1 GB). The 
 - Once your application works as expected, create your Dockerfile.
 - Create a `build.sh` script that runs your `docker build` command.
 - Build your Docker image by running `build.sh`.
-- Run your Docker image against a reasonably small file (< 1 GB). Your `docker run` command should look something like `docker run image-name:tag python app.py --filepath="" --delimiter=""`. Consider experimenting using larger files to see how your application behaves.
+- Run your Docker image. You may need to download the file inside of your running Docker container or mount it from your filesystem using the `-v /local/path:/container/path`. Your `docker run` command should look something like `docker run image-name:tag python app.py --filepath="" --delimiter=""`. Consider experimenting using larger files to see how your application behaves.
 - After it works correctly, add your solution to Github and try the next project (or try this one again using a different language!)
