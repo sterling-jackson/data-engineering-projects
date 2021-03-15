@@ -14,7 +14,7 @@
 
 ##### Instructions:
 - Create your Python application.
-- Run your Python aplication against a reasonably small file (~1 GB). The [https://www.kaggle.com/sobhanmoosavi/us-accidents](US Accidents) file on Kaggle is a good option.
+- Run your Python aplication against a reasonably small file (~1 GB). The [US Accidents](https://www.kaggle.com/sobhanmoosavi/us-accidents) file on Kaggle is a good option.
 - Once your application works as expected, create your Dockerfile.
 - Create a `build.sh` script that runs your `docker build` command.
 - Build your Docker image by running `build.sh`.
