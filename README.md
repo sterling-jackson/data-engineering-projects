@@ -11,7 +11,7 @@ A collection of projects to learn data engineering and demonstrate proficiency w
 ### Project 1: Docker + Python CLI
 - Build a Docker image that runs a Python application which accepts --filepath and --delimiter arguments. 
 - Use `argparse`, `logging`, `csv` and a multi-processing library of your choice such as `concurrent.futures`. Consider experimenting with both thread and process pooling to see which yields better performance.
-- Your application should read the file into memory and append `checksum` and `source_file` to each row, then write out a new file.
+- Your application should read the file into memory and append `checksum` to each row, then write each row to a new file.
 - Avoid using Pandas for this exercise to better showcase your profiency with the language.
 - See `project-1` to get started.
 
