@@ -32,4 +32,10 @@ A collection of projects to learn data engineering and demonstrate proficiency w
 - See `project-3` to get started.
 
 ### Project 4: Simple Kafka Consumer & Producer
-...
+- Create a generic Kafka Consumer and Kafka Producer using the `confluent_kafka` library.
+- The Consumer should accept a `--topic` argument and should read until the topic is empty, writing messages to a JSON file. Because mistakes happen, consider verifying that the messages are valid JSON and rejecting them if they are invalid.
+- The Producer should accept `--topic` and `--messages` arguments. It should randomly generate and publish `n` messages containing a UUID for `eventId`, a random string for `eventText`, and the current timestamp for `eventTimestamp`.
+- See `project-4` to get started.
+
+### Project 5: Simple SQS Consumer & Producer
+- You will need an AWS account for this project. Amazon's "always free" tier includes 1M SQS requests.
